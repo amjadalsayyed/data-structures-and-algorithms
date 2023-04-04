@@ -2,8 +2,8 @@
 
 ## Code 401 - Advanced Software Development
 
-| title         |                               Some links |
-| :------------ | ---------------------------------------: |
-| array-reverse | [Link](./array-reverse/array-reverse.md) |
-|               |                                          |
-|               |                                          |
+| title               |                                          Some links |
+| :------------------ | --------------------------------------------------: |
+| array-reverse       |            [Link](./array-reverse/array-reverse.md) |
+| array-insert-shift. | [Link](./array-insert-shift//array-insert-shift.md) |
+|                     |                                                     |
