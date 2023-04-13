@@ -4,6 +4,8 @@
 
 ## Whiteboard Process
 
+> - NONE
+
 ## Approach & Efficiency
 
 > - Time --> O(1) because there no looping over the list\
