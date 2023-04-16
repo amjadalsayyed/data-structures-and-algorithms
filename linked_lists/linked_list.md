@@ -4,7 +4,7 @@
 
 ## Whiteboard Process
 
-> - NONE
+![CC5](./cc5.png)
 
 ## Approach & Efficiency
 
