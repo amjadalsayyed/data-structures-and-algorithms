@@ -4,7 +4,21 @@
 
 ## Whiteboard Process
 
-> - NONE
+### insert
+
+![CC5](./cc5.png)
+
+### append
+
+![CC6](./cc6-1.png)
+
+### insert before
+
+![CC6](./cc6-2.png)
+
+### insert after
+
+![CC6](./cc6-3.png)
 
 ## Approach & Efficiency
 
