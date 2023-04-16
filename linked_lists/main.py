@@ -6,7 +6,13 @@ if __name__ == '__main__':
       linked_list.insert('A')
       linked_list.insert('B')
       linked_list.insert('C')
+      # linked_list.append('D')
+      # linked_list.append('E')
+      linked_list.insert_after('s','f')
+      # linked_list.insert_before('C','g')
+
       
       print(linked_list)
 
       print(linked_list.includes('D'))
+
