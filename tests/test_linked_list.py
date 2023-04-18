@@ -61,6 +61,26 @@ def test_12(AA):
     actual = str(AA)       
     assert expected == actual
 
+def test_13(AA):
+    expected= "Error : Your input can't be more than the length" 
+    actual = AA.kthFromEnd(4)
+    assert  expected == actual  
+def test_14(AA):
+    expected= "Error : Your input can't be more than the length" 
+    actual = AA.kthFromEnd(7)
+    assert  expected == actual  
+
+def test_15():
+    LL= LinkedList()
+    LL.insert("A")
+    assert LL.kthFromEnd(0) == "A"
+
+def test_16(AA):
+    expected= "C" 
+    actual = AA.kthFromEnd(2)
+    assert  expected == actual  
+
+
 
 
     
@@ -71,3 +91,12 @@ def AA():
     AA.insert('B')
     AA.insert('C')
     return AA
+
+@pytest.fixture(autouse=True)
+def clean():
+    """runs before each test automatically.
+    This is necessary because otherwise the count added in one test
+    will bleed over to other tests
+   
+    """
+    LinkedList.count = 0
