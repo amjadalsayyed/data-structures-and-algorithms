@@ -79,6 +79,10 @@ def test_16(AA):
     expected= "C" 
     actual = AA.kthFromEnd(2)
     assert  expected == actual  
+    
+def test_17(AA,BB):
+    LL = LinkedList()
+    assert str(LL.zip_list(AA,BB)) == "C -> 1 -> B -> 2 -> A -> 3 ->  Null"
 
 
 
@@ -91,6 +95,13 @@ def AA():
     AA.insert('B')
     AA.insert('C')
     return AA
+@pytest.fixture
+def BB():
+    BB = LinkedList()
+    BB.insert('3')
+    BB.insert('2')
+    BB.insert('1')
+    return BB
 
 @pytest.fixture(autouse=True)
 def clean():
