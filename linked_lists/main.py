@@ -7,16 +7,14 @@ if __name__ == '__main__':
       linked_list.insert('A')
       linked_list.insert('B')
       linked_list.insert('C')
-      linked_list.append('D')
+      # linked_list.append('D')
 
 
-      linked_list_2.insert('1')
-      linked_list_2.insert('2')
       linked_list_2.insert('3')
-      linked_list_2.insert('4')
-      # # linked_list.append('E')
-      # linked_list.insert_after('A','f')
-      # linked_list.insert_before('C','g')
+      linked_list_2.insert('2')
+      linked_list_2.insert('1')
+      # linked_list_2.insert('4')
+     
      
       
       print(linked_list)
