@@ -24,6 +24,10 @@
 
 ![CC7](./cc7.png)
 
+### linked-list-zip
+
+![CC8](./CC8.png)
+
 ## Approach & Efficiency
 
 > - Time --> O(1) for some of them you can check the white board
@@ -151,6 +155,39 @@ class LinkedList:
 
          return pointer_one.value
 
+    def zip_list (self,list1,list2):
+        """this function takes two linked list and zip them togather """
+        list1_head = list1.head
+        list2_head = list2.head
+        if list1_head == None and list2_head == None:
+            return print("Both lists are empty")
+        elif list1_head == None:
+            return list2
+        elif list2_head == None:
+            return list1
+        else:
+            current = list1.head
+            current_2 =list2.head
+            # stoper = current.next
+            while current and current_2  :
+                if current:
+                    temp = current.next
+                    current.next = current_2
+                    current=temp
+
+                if current_2:
+                     temp_2 = current_2.next
+                     current_2.next = temp
+                     current_2 = temp_2
+
+
+            if current_2:
+                while current_2 :
+                    list1.append(current_2.value)
+                    current_2=current_2.next
+
+
+        return list1
 
 
 
