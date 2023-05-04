@@ -150,8 +150,33 @@ class LinkedList:
 
 
         return list1  
+    
+    def revers(self):
+        prev=None
+        current=self.head
+        while  current is not None:
+          next=current.next
+          current.next=prev
+          prev = current
+          current = next
+        self.head=prev
 
+    def is_palindrome(linked_list):
+         current=linked_list.head
+         new_linked=LinkedList()
+         while current:
+            new_linked.append(current.value)
+            if current.next == None:
+                break
+            current = current.next
+  
+         LinkedList.revers(new_linked)
+  
 
+         if linked_list.__str__() == new_linked.__str__():
+            return True
+         else :
+            return False
 
 
            
