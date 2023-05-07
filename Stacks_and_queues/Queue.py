@@ -1,6 +1,7 @@
 from Stacks_and_queues.Node import Node
 
 class Queue:
+    """this clas make a queue and can enqueue and dequeue nodes i also check if the queue is empty and can give the fisrt node in the queue"""
     def __init__(self):
         self.front = None
         self.rear = None
