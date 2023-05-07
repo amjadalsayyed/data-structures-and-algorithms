@@ -1,7 +1,7 @@
 from Stacks_and_queues.Node import Node
 
 class Stack:
-
+    """this class make a stack ,add to it ,remove from it ,get the top value,get the size and check if its empty """
     def __init__(self):
         self.top = None
         self.size = 0
