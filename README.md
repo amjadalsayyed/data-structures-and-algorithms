@@ -8,3 +8,4 @@
 | array-insert-shift. |  [Link](./array-insert-shift//array-insert-shift.md) |
 | array-binary-search | [Link](./array-binary-search/array-binary-search.md) |
 | linked-list         |                [Link](./linked_lists/linked_list.md) |
+| PseudoQueue         |   [Link](./stack_queue_pseudo/stack_queue_pseudo.md) |
