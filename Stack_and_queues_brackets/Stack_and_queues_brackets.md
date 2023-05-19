@@ -13,7 +13,7 @@
 
 ## Solution
 
-```
+```python
 def validate_brackets(string):
         stack = Stack()
         for i in range(len(string)):
