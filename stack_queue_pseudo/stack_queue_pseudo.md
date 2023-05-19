@@ -13,7 +13,7 @@
 
 ## Solution
 
-```
+```python
 class PseudoQueue:
     """
     this queue is using two stack to implement it self and add to the queue and de queue from it

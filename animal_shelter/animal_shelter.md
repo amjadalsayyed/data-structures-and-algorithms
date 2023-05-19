@@ -13,7 +13,7 @@
 
 ## Solution
 
-```(python)
+```python
 class AnimalShelter:
     """ this class use two queue to add dogs to one of them and cats to the another and
     dequeue depands on the pref for the dequeue function
