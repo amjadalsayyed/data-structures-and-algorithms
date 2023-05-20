@@ -1,6 +1,10 @@
 from Trees.Node import Node
 
 class BinaryTree:
+    """This Class creeate a tree where you can add nodes as leaf to it using root.left and root.right
+    also there is three fuction that can help you put the values in order, pre order and post order
+    
+    """
     def __init__(self):
         self.root = None
 
@@ -35,6 +39,10 @@ class BinaryTree:
         return list
 
 class BinarySearchTree(BinaryTree):
+     """
+     this class is an extend from the binary tree class where it has two fuctions to one to add nodes to the tree dinamicly while keeping it binary 
+     and the other is to find if the value exeist in the tree or not 
+     """
      def __init__(self):
           super().__init__()
 
