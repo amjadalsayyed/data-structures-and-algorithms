@@ -24,6 +24,10 @@
 
 ![CC15](./CC15_5.jpg)
 
+## Get_max
+
+![CC16](./CC_16.jpg)
+
 ## Approach & Efficiency
 
 > - Time --> O(log n) , O(n) check whiteboard for more info
@@ -65,6 +69,18 @@ class BinaryTree:
              list.append(root.value)
         recursive(root)
         return list
+
+     def find_maximum_value(self):
+         if self.root is None : return "Empty Tree!"
+         if self.max is None : self.max = self.root.value
+         def find_max (root):
+              if root.left: find_max(root.left)
+              if root.right: find_max(root.right)
+              if root.value > self.max:
+                    self.max = root.value
+
+         find_max(self.root)
+         return self.max
 
 class BinarySearchTree(BinaryTree):
      def __init__(self):

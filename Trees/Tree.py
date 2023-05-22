@@ -7,7 +7,7 @@ class BinaryTree:
     """
     def __init__(self):
         self.root = None
-
+        self.max= None
     def pre_order (self,root):
         if self.root == None : return []
         list=[]
@@ -37,6 +37,21 @@ class BinaryTree:
              list.append(root.value)
         recursive(root)     
         return list
+    
+    def find_maximum_value(self): 
+         if self.root is None : return "Empty Tree!" 
+         if self.max is None : self.max = self.root.value    
+         def find_max (root):
+              if root.left: find_max(root.left)
+              if root.right: find_max(root.right)
+              if root.value > self.max:
+                    self.max = root.value
+              
+         find_max(self.root)
+         return self.max        
+        
+              
+         
 
 class BinarySearchTree(BinaryTree):
      """
@@ -71,43 +86,43 @@ class BinarySearchTree(BinaryTree):
            
 
 if __name__ == "__main__":
-        tree = BinarySearchTree()
+        tree = BinaryTree()
 
-        # node1 = Node("A")
-        # tree.root = node1
+        node1 = Node(-3)
+        tree.root = node1
 
-        # node2 = Node("B")
-        # tree.root.left = node2
+        node2 = Node(-4)
+        tree.root.left = node2
 
-        # node3 = Node("C")
-        # tree.root.right = node3
+        node3 = Node(-23)
+        tree.root.right = node3
 
-        # node4 = Node("D")
-        # tree.root.left.left = node4
+        node4 = Node(-56)
+        tree.root.left.left = node4
 
-        # node5 = Node("E")
-        # tree.root.left.right = node5
+        node5 = Node(-210)
+        tree.root.left.right = node5
 
-        # node6 = Node("F")
-        # tree.root.right.left = node6
-        tree.add(10)
-        tree.add(4)
-        tree.add(3)
-        tree.add(13)
-        tree.add(11)
-        # tree.add(11)
-        tree.add(9)
-        tree.add(19)
-        tree.add(1353)
-        tree.add(1911)
-        tree.add(193)
-        tree.add(191)
+        node6 = Node(-90)
+        tree.root.right.left = node6
+     #    tree.add(10)
+     #    tree.add(4)
+     #    tree.add(3)
+     #    tree.add(13)
+     #    tree.add(11)
+     #    # tree.add(11)
+     #    tree.add(9)
+     #    tree.add(19)
+     #    tree.add(1353)
+     #    tree.add(1911)
+     #    tree.add(193)
+     #    tree.add(191)
 
-        print(tree.pre_order(tree.root))
-        print(tree.in_order(tree.root))
-        print(tree.in_order(tree.root))
-        print(tree.contain(22))
-        print(tree.contain(3))
+        print(tree.find_maximum_value())
+     #    print(tree.in_order(tree.root))
+     #    print(tree.in_order(tree.root))
+     #    print(tree.contain(22))
+     #    print(tree.contain(3))
 
 
 
