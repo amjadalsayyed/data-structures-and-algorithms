@@ -1,4 +1,5 @@
 from Trees.Node import Node
+from Stacks_and_queues.Queue import Queue
 
 class BinaryTree:
     """This Class creeate a tree where you can add nodes as leaf to it using root.left and root.right
@@ -64,7 +65,8 @@ class BinaryTree:
                     self.max = root.value
               
          find_max(self.root)
-         return self.max        
+         return self.max 
+           
         
               
          
@@ -98,7 +100,27 @@ class BinarySearchTree(BinaryTree):
                elif current.value > value: current = current.left    
                elif current.value < value: current = current.right
                else: return True   
-                    
+
+
+def  breadth_first(tree):
+     """
+     this function takes a tree as an arguments the add the root to the queue then enter a loop with a condtion that keep looping until the queue is empty 
+     inside the loop it dequeue from the queue and store the returned node from the dequeue and push it into the list thhen check if it has a left node add it to the queue and if it has a right value add it to the queue 
+     after the loop ends it return the list 
+     """
+     if tree.root is None: return "Empty Tree!"
+     list = []
+     queue = Queue()
+     queue.enqueue(tree.root)
+     while queue.is_empty() is False:
+          node = queue.dequeue()
+          list.append(node.value)
+          if node.left : queue.enqueue(node.left)
+          if node.right : queue.enqueue(node.right)
+     return list     
+
+
+
            
 
 if __name__ == "__main__":
@@ -134,7 +156,7 @@ if __name__ == "__main__":
      #    tree.add(193)
      #    tree.add(191)
 
-        print(tree.find_maximum_value())
+        print(breadth_first(tree))
      #    print(tree.in_order(tree.root))
      #    print(tree.in_order(tree.root))
      #    print(tree.contain(22))
