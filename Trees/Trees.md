@@ -28,6 +28,10 @@
 
 ![CC16](./CC_16.jpg)
 
+## breadth_first
+
+![CC17](./CC_17.jpg)
+
 ## Approach & Efficiency
 
 > - Time --> O(log n) , O(n) check whiteboard for more info
@@ -107,4 +111,21 @@ class BinarySearchTree(BinaryTree):
                elif current.value > value: current = current.left
                elif current.value < value: current = current.right
                else: return True
+
+def  breadth_first(tree):
+     """
+     this function takes a tree as an arguments the add the root to the queue then enter a loop with a condtion that keep looping until the queue is empty
+     inside the loop it dequeue from the queue and store the returned node from the dequeue and push it into the list thhen check if it has a left node add it to the queue and if it has a right value add it to the queue
+     after the loop ends it return the list
+     """
+     if tree.root is None: return "Empty Tree!"
+     list = []
+     queue = Queue()
+     queue.enqueue(tree.root)
+     while queue.is_empty() is False:
+          node = queue.dequeue()
+          list.append(node.value)
+          if node.left : queue.enqueue(node.left)
+          if node.right : queue.enqueue(node.right)
+     return list
 ```
