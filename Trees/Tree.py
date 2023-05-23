@@ -9,6 +9,10 @@ class BinaryTree:
         self.root = None
         self.max= None
     def pre_order (self,root):
+        """
+        in this function we loop over the tree elements using recusive function 
+        to sort the values in alist according to DFS pre order method
+        """
         if self.root == None : return []
         list=[]
         def recursive (root):
@@ -19,6 +23,10 @@ class BinaryTree:
         return list
     
     def in_order(self,root):
+        """
+        in this function we loop over the tree elements using recusive function 
+        to sort the values in alist according to DFS in order method
+        """
         if self.root == None : return [] 
         list =[]
         def recursive (root):
@@ -29,6 +37,10 @@ class BinaryTree:
         return list
     
     def post_order(self,root):
+        """
+        in this function we loop over the tree elements using recusive function 
+        to sort the values in alist according to DFS post order method
+        """
         if self.root == None : return []
         list=[]
         def recursive (root):
@@ -39,6 +51,10 @@ class BinaryTree:
         return list
     
     def find_maximum_value(self): 
+         """
+         in this function we loop over the tree elements using recusive function to compare every value 
+         inside the tree with the max value and assign it to max if its bigger
+         """
          if self.root is None : return "Empty Tree!" 
          if self.max is None : self.max = self.root.value    
          def find_max (root):
