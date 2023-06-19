@@ -11,3 +11,5 @@
 | PseudoQueue         |   [Link](./stack_queue_pseudo/stack_queue_pseudo.md) |
 | Animal shelter      |           [Link](./animal_shelter/animal_shelter.md) |
 | Trees               |                             [Link](./Trees/Trees.md) |
+| merge_sort          |                    [Link](./merge_sort/mergeSort.md) |
+| sorting_comparisons |        [Link](./sorting_comparisons/sorting_comp.md) |
