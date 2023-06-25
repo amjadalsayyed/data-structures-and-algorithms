@@ -13,3 +13,4 @@
 | Trees               |                             [Link](./Trees/Trees.md) |
 | merge_sort          |                    [Link](./merge_sort/mergeSort.md) |
 | sorting_comparisons |        [Link](./sorting_comparisons/sorting_comp.md) |
+| hash table          |                     [Link](./hashtable/hashtable.md) |
