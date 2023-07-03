@@ -45,12 +45,12 @@ class Hashtable:
         return indx  
 
 
-# x = Hashtable()
-# x.set('x',70)
-# x.set('a',20)
-# x.set('s',30)
-# # x.set('d',40)
-# x.set('r',50)
-# # print(x.hash)
+x = Hashtable()
+x.set('x',70)
+x.set('a',20)
+x.set('s',30)
+x.set('d',40)
+x.set('r',50)
+print(x.table)
 # print(x.has('d'))
 
