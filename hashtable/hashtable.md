@@ -14,11 +14,13 @@
 
 ### returns: nothing
 
----
+### big O
 
-## Approach
+#### time : O(n) space : O(1)
 
-### it takes the key and pass it to the hash function which returns the index
+### Approach
+
+#### it takes the key and pass it to the hash function which returns the index
 
 ### then it checks if the table contains the any key and value in the same position if it does not it inatializes a new list at the position and add the key and value as a list of two elements key and value
 
@@ -30,9 +32,13 @@
 
 ### returns: the value of the key in the hash table
 
+### big O
+
+#### time : O(n) space : O(1)
+
 ### Approach
 
-### it takes the key and pass it to the hash function which returns the index
+#### it takes the key and pass it to the hash function which returns the index
 
 ### then it checks if the table contains the key after that it search for the key in the table and gets it value
 
@@ -44,9 +50,13 @@
 
 ### returns: a list of the keys in the hash table
 
+### big O
+
+#### time : O(n) space : O(n)
+
 ### Approach
 
-### it loops through the hash table and another nested loop loops through the elements in the hash table and access the key value and adds it to the list
+#### it loops through the hash table and another nested loop loops through the elements in the hash table and access the key value and adds it to the list
 
 ---
 
@@ -56,9 +66,13 @@
 
 ### returns: Boolean
 
+### big O
+
+#### time : O(n) space : O(n)
+
 ### Approach
 
-### it call the keys function then checks if the key exists in the list of keys
+#### it call the keys function then checks if the key exists in the list of keys
 
 ## Solution:
 
