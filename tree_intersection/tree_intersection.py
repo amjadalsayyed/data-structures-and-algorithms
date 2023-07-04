@@ -2,6 +2,7 @@ from Trees.Tree import BinaryTree
 from Trees.Node import Node
 
 def in_order(root):
+        """this function loops through the first tree and stores the value of each node in the hashmap dict as a key and the value and returns the dict in the end"""
         if root == None : return {} 
         hashmap ={}
         def recursive (root):
@@ -12,11 +13,13 @@ def in_order(root):
         return hashmap
 
 def tree_intersection (rootone, roottwo):
+      """this function calls the in order function and store the returnedd value in varible called hashmap then declare a dict to store the intersect node values in it after looping through the sconed tree using the function declared inside it  the return the intersection_node dict as a list after using the .keys method """
       hashmap = in_order(rootone)
       intersection_node = {}
       if roottwo.value in hashmap:
            intersection_node[roottwo.value] = roottwo.value
       def recursive (root):
+           """this function loops through the sconed tree to find the intersected nodes by checking if its inside the hashmap dict """
            if root.left :
                 if root.left.value in hashmap:
                     intersection_node[root.left.value] = root.left.value
