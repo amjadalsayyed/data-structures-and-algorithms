@@ -15,3 +15,5 @@
 | sorting_comparisons   |            [Link](./sorting_comparisons/sorting_comp.md) |
 | hash table            |                         [Link](./hashtable/hashtable.md) |
 | hashmap repeated word | [Link](./hashmap_repeated_word/hashmap_repeated_word.md) |
+| treintersection       |         [Link](./tree_intersection/tree_intersection.md) |
+| left join             |                         [Link](./left_join/left_join.md) |
