@@ -8,6 +8,7 @@ class Node:
 
 class Edge:
     def __init__(self,vertex, weight=0):
+        self.value = vertex.value
         self.vertex = vertex
         self.weight = weight
 
@@ -76,13 +77,15 @@ class Graph:
         visited_vertex = {}
         current_vertex = None
         visited_vertex[vertex] = True
-
+       
+        
         while(len(queue) > 0):
             current_vertex = queue.pop(0)
             output.append(current_vertex.value)
             
             for i in self.adj_list[current_vertex]:
-                if i not in visited_vertex :
-                    visited_vertex[i] = True
-                    queue.append(i)
+                if i.vertex not in visited_vertex :
+                    visited_vertex[i.vertex] = True
+                    queue.append(i.vertex)
         return output        
+

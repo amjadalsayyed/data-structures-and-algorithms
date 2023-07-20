@@ -69,3 +69,40 @@ def test_graph_five():
     actual = str(graph)
     expected ="A -> \n"
     assert actual == expected
+
+def test_graph_six():
+    graph = Graph()
+
+    a = graph.add_vertex("A")
+    b = graph.add_vertex("B")
+    c = graph.add_vertex("C")
+    d = graph.add_vertex("D")
+
+    graph.add_edge(a,b,2)
+    graph.add_edge(a,c,3)
+    graph.add_edge(c,b,3)
+    graph.add_edge(d,b,4)
+    graph.add_edge(d,c,5)
+    actual = graph.bfs(a)
+    expected =['A', 'B', 'C', 'D']
+    assert actual == expected
+
+
+def test_graph_seven():
+    graph = Graph()
+
+    a = graph.add_vertex("A")
+    b = graph.add_vertex("B")
+    c = graph.add_vertex("C")
+    d = graph.add_vertex("D")
+    e = graph.add_vertex("E")
+
+
+    graph.add_edge(a,b,2)
+    graph.add_edge(a,c,3)
+    graph.add_edge(c,b,3)
+    graph.add_edge(d,b,4)
+    graph.add_edge(d,c,5)
+    actual = graph.bfs(a)
+    expected =['A', 'B', 'C', 'D']
+    assert actual == expected
