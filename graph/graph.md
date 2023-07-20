@@ -84,9 +84,28 @@ Approach
 
 this function will declare a queue with the given vertex in it,output list ,visited vertex dict and a current vertex then mark the given vertex as visited by adding it to the visited vertex dictionary then using a while loop to loop until the queue is empty in the loop it pop the first vertex in the queue and append its value to the output list then do a for loop to loop over the neighbors of the current vertex and adds its values to the queue and mark them as visted by adding them to the visited vertex dictionary with a value of True
 
-### whitebored :
+## business_trip function
+
+arguments : vertex , list of cites
+
+returns: the weight of the edges between the list of cites
+
+big O
+
+time : O(n^2) space : O(n)
+
+Approach:
+this function loops over the cites list using the enumarate method to get the index and the value then inside the loop create a node of the value and get its neibghors and inatilize a new dictionary to stor the nighbors value and weight related to the node value as long as we didn't reach the last value in the cites list the check if there is an edge between the value and the value next to it in the list of cites by checking if its in the dictionary if it exists we add it to the sum if not we return none
+
+## whitebored :
+
+### bfs function
 
 ![CC36](./CC36.jpg)
+
+### business_trip function
+
+![CC37](./CC37.jpg)
 
 ### Solution
 

@@ -21,7 +21,7 @@ class Graph:
         """this function gets a value and creates a new node from it then adds it to the adj_list as a key with an empty list as a value for that key"""
         new_vertex = Node(value)
       
-        self.adj_list[new_vertex] = []
+        self.adj_list[f'{new_vertex.value}'] = []
         self.size += 1
         return new_vertex
     
@@ -29,31 +29,31 @@ class Graph:
 
         """this function gets called with to vertices and an optional weight parameter then checks if the two vertices exist in the adj_list then create an edg from both vertices and add them to the list of edges for each one of them"""
 
-        if not vertex1 in self.adj_list.keys():
-            return("this vertex does not exist")
         
-        if not vertex2 in self.adj_list.keys():
-            return("this vertex does not exist")
+        if not vertex1.value in self.adj_list.keys():
+            return "this vertex does not exist"
+        
+        if vertex2 is None or not vertex2.value in self.adj_list.keys():
+            return "this vertex does not exist"
         
         edge1 = Edge(vertex2, weight)
-        self.adj_list[vertex1].append(edge1)
-
+        self.adj_list[f"{vertex1.value}"].append(edge1)
         edge2 = Edge(vertex1, weight)
-        self.adj_list[vertex2].append(edge2)
+        self.adj_list[f"{vertex2.value}"].append(edge2)
 
     def get_vertices(self):
          """this function is called with no arguments and returns a list of vertices"""
          vertices = []
          for i in self.adj_list.keys():
-             vertices.append(i.value)
+             vertices.append(i)
          return vertices
 
     def get_neighbors(self,vertex):
         """this function is called with a vertex as an argument and returns a list of edges connected to it"""
         result = []
        
-        for i in self.adj_list[vertex]:
-                tub = (i.vertex.value,i.weight)
+        for i in self.adj_list[vertex.value]:
+                tub = (i.value,i.weight)
                 result.append(tub)
         return result
     
@@ -64,9 +64,10 @@ class Graph:
     def __str__(self):
         output = ''
         for vertex in self.adj_list.keys():
-            output += f'{vertex.value} -> '
+            output += f'{vertex} -> '
             for edge in self.adj_list[vertex]:
-                output += f'{edge.vertex.value} -----> '
+                
+                output += f'{edge.value} -----> '
             output += '\n'
         return output
 
@@ -83,9 +84,48 @@ class Graph:
             current_vertex = queue.pop(0)
             output.append(current_vertex.value)
             
-            for i in self.adj_list[current_vertex]:
+            for i in self.adj_list[current_vertex.value]:
                 if i.vertex not in visited_vertex :
                     visited_vertex[i.vertex] = True
                     queue.append(i.vertex)
         return output        
 
+
+
+
+        
+    def business_trip (self,vertex,cites_list):
+        """this function loops over the cites list using the enumarate method to get the index and the value then inside the loop  create a node of the value and get its neibghors and inatilize a new dictionary to stor the nighbors value and weight related to the node value as long as we didn't reach the last value in the cites list the check if there is an edge between the value and the value next to it in the list of cites by checking if its in the dictionary if it exists we add it to the sum if not we return none """
+        sum = 0 
+
+        for i , v in enumerate(cites_list):
+            vertex_of_v = Node(v)
+            neighbors = self.get_neighbors(vertex_of_v)
+            dict = {}
+            if i < len(cites_list)-1:
+                for j in neighbors:
+                    dict[j[0]]= j[1]
+                if cites_list[i+1] in dict:
+                    sum += dict[cites_list[i+1]]
+                else:
+                    return None    
+        return sum           
+
+
+
+# if __name__=='__main__':
+#             graph = Graph()
+
+#             a = graph.add_vertex("A")
+#             b = graph.add_vertex("B")
+#             c = graph.add_vertex("C")
+#             d = graph.add_vertex("D")
+#             e = graph.add_vertex("E")
+
+#             graph.add_edge(a,b,2)
+#             graph.add_edge(a,c,3)
+#             graph.add_edge(c,b,3)
+#             graph.add_edge(b,d,4)
+#             graph.add_edge(d,c,5)
+            
+#             print(graph.business_trip(a,["A","C","B","D"]))
