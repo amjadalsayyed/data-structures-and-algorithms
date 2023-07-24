@@ -107,6 +107,10 @@ this function loops over the cites list using the enumarate method to get the in
 
 ![CC37](./CC37.jpg)
 
+### dfs function
+
+![CC38](./CC38.jpg)
+
 ### Solution
 
 ```python
@@ -125,5 +129,19 @@ def bfs (self,vertex):
                 if i not in visited_vertex :
                     visited_vertex[i] = True
                     queue.append(i)
-            return output
+        return output
+
+  def depthFirst(self,start ):
+        result = []
+        visited = {}
+        def dfsrecusive(vertex):
+            if vertex is None: return None
+            visited[vertex] = True
+            result.append(vertex.value)
+            for i in self.adj_list[vertex.value]:
+                if i.vertex not in visited:
+                    dfsrecusive(i.vertex)
+        dfsrecusive(start)
+
+        return result
 ```
