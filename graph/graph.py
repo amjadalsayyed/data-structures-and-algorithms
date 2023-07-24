@@ -110,7 +110,21 @@ class Graph:
                 else:
                     return None    
         return sum           
+    
+    def depthFirst(self,start ):
+        """this function calls the helper function dfsrecursive with the start vertex in the helper function we add the vertex value to the result and mark it as visted then loop on its edges and check if the edge not visted then we call the dfsrecursive function on it then return the result list """
+        result = []
+        visited = {}
+        def dfsrecusive(vertex):
+            if vertex is None: return None
+            visited[vertex] = True
+            result.append(vertex.value)
+            for i in self.adj_list[vertex.value]:
+                if i.vertex not in visited:
+                    dfsrecusive(i.vertex)
+        dfsrecusive(start)
 
+        return result        
 
 
 # if __name__=='__main__':
@@ -121,11 +135,18 @@ class Graph:
 #             c = graph.add_vertex("C")
 #             d = graph.add_vertex("D")
 #             e = graph.add_vertex("E")
+#             f = graph.add_vertex("F")
+#             g = graph.add_vertex("G")
+#             h = graph.add_vertex("H")
 
 #             graph.add_edge(a,b,2)
-#             graph.add_edge(a,c,3)
-#             graph.add_edge(c,b,3)
+#             graph.add_edge(a,d,3)
+#             graph.add_edge(b,c,3)
 #             graph.add_edge(b,d,4)
-#             graph.add_edge(d,c,5)
+#             graph.add_edge(c,g,5)
+#             graph.add_edge(d,e,5)
+#             graph.add_edge(d,h,5)
+#             graph.add_edge(d,f,5)
+#             graph.add_edge(h,f,5)
             
-#             print(graph.business_trip(a,["A","C","B","D"]))
+#             print(graph.depthFirst(a))

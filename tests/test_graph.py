@@ -145,3 +145,57 @@ def test_graph_9():
     expected = None
     assert actual == expected
 
+################# DEPTH FIRST SEARCH ##################
+def test_graph_13():
+    graph = Graph()
+
+    a = graph.add_vertex("A")
+    b = graph.add_vertex("B")
+    c = graph.add_vertex("C")
+    d = graph.add_vertex("D")
+
+    graph.add_edge(a,b,2)
+    graph.add_edge(a,c,3)
+    graph.add_edge(c,b,3)
+    graph.add_edge(d,b,4)
+    graph.add_edge(d,c,5)
+    actual = graph.depthFirst(a)
+    expected =['A', 'B', 'C', 'D']
+    assert actual == expected
+
+def test_graph_14():
+    graph = Graph()
+
+    a = graph.add_vertex("A")
+    b = graph.add_vertex("B")
+    c = graph.add_vertex("C")
+    d = graph.add_vertex("D")
+   
+
+
+    graph.add_edge(a,b,2)
+    graph.add_edge(a,c,3)
+    graph.add_edge(c,b,3)
+    graph.add_edge(d,b,4)
+    graph.add_edge(d,c,5)
+    actual = graph.depthFirst(a)
+    expected =['A', 'B', 'C', 'D']
+    assert actual == expected
+
+def test_graph_15():
+    graph = Graph()
+
+    a = graph.add_vertex("A")
+    b = graph.add_vertex("B")
+    c = graph.add_vertex("C")
+    d = graph.add_vertex("D")
+    e = graph.add_vertex("E")
+
+    graph.add_edge(a,b,2)
+    graph.add_edge(a,c,3)
+    graph.add_edge(c,b,3)
+    graph.add_edge(d,b,4)
+    graph.add_edge(d,c,5)
+    actual = graph.depthFirst(e)
+    expected =['E']
+    assert actual == expected
